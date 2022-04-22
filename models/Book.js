@@ -23,3 +23,7 @@ const bookSchema = new mongoose.Schema({
         required: true
     }
 })
+
+const Book = mongoose.model("Book", bookSchema);
+
+module.exports = Book;

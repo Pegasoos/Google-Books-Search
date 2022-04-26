@@ -1,7 +1,9 @@
 const express = require('express');
 const path = require('path');
-const PORT = process.env.PORT || 3333;
+const PORT = process.env.PORT || 8000;
 const app = express();
+
+const mongoose = require("mongoose");
 
 const apiRoutes = require('./controllers/apiRoutes')
 
@@ -21,6 +23,7 @@ mongoose.connect(
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
   });
 
-  app.listen(PORT, () => {
-    console.log(`Listening at http//:localhost${PORT}!`);
-  });
+  app.listen(PORT, async () => {
+   await console.log(`Listening at http//:localhost:${PORT}!`)
+  })
+  mongoose.connection.on('connected', () => console.log('Connected!'));

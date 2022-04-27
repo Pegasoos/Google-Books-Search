@@ -5,23 +5,25 @@ router.get('/books', async (req, res) =>{
 try {
     const books = await Book.find();
     
-    res.json(books);
+    res.status(200).json(books);
 } catch (error) {
-    res.json(error)
+    res.status(500).json(error)
 }
 }); 
 router.post('/books', async (req, res) =>{
     try {
-        await Book.save();
+       const newBook = await Book.create(req.body);
+        res.status(201).json(newBook);
     } catch (error) {
-        res.json(error)
+        res.status(500).json(error);
     }
     }); 
 router.delete('/books/:id', async (req, res) =>{
         try {
-            await Book.findOneAndDelete();
+           const deletedBook = await Book.deleteOne({_id:req.body});
+            res.status(201).json(deletedBook);
         } catch (error) {
-            res.json(error)
+            res.status(500).json(error);
         }
         }); 
 module.exports = router;

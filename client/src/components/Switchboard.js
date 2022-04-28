@@ -1,14 +1,14 @@
 import React from 'react'
-import {Switch, Root} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Search from './Saved'
 import Saved from './Saved'
 
 const Switchboard = () => {
     <main>
-        <Switch>
+        <Routes>
              <Route exact path = '/' component = {Search} />
              <Route path = '/saved' component = {Saved} />
-        </Switch>
+        </Routes>
     </main>
 }
 export default Switchboard

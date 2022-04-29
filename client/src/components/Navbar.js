@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from 'antd';
 
-const Navbar = () => {
+function Navbar() {
+    
+        return(
 <header>
     <h2 className = "logo">Google Books Search</h2>
     <Menu>
@@ -10,6 +12,8 @@ const Navbar = () => {
         <Menu.Item><Link to ='/saved'>Saved</Link></Menu.Item>
     </Menu>
 </header>
-};
+            )
+        
+    };
 
 export default Navbar;

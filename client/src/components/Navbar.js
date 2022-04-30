@@ -10,7 +10,7 @@ function Navbar() {
             <h3 className = "logo">Google Books Search</h3> 
             <Menu mode='horizontal'>
                 <Menu.Item><Link to ='/'><SearchOutlined /> Search</Link></Menu.Item>
-                <Menu.Item><Link to ='/saved'><BookTwoTone />Saved</Link></Menu.Item>
+                <Menu.Item><Link to ='/saved'><BookTwoTone className='book-icon' />Saved</Link></Menu.Item>
             </Menu>    
     </Row>
             )

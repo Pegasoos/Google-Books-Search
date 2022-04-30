@@ -1,0 +1,8 @@
+.banner-img{
+    background-image: url('../../public/images/logo.png'), url('../logo.svg');
+    height: 100px;
+    background-position:center, 50.5%, 50%;
+    background-repeat: no-repeat;
+    background-size: contain, 11%;
+    position: relative;
+};

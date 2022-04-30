@@ -9,6 +9,7 @@ function App() {
     <div>
       <Switchboard />
       <Navbar />
+      <Banner />
     </div>
   );
 }

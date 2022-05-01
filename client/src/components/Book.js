@@ -9,10 +9,10 @@ function Book(props){
             <Row>
                 <Col className = 'book-heading-div' span = {6}>
                 <h1>
-                    {props.volumeInfo.title}
+                    {props.title}
                 </h1>
                 <h3>
-                    Written by {props.volumeInfo.authors[0]}
+                    Written by {props.authors}
                 </h3>
                 </Col>
                 <Col className = 'button-div' span = {4} offset = {14}>
@@ -25,10 +25,10 @@ function Book(props){
             <section>
                 <Row>
                     <Col span = {4}>
-                        <img src = {props.volumeInfo.imageLinks.medium}></img>
+                        <img src = {props.imgSrc}></img>
                     </Col>
                     <Col span = {20}>
-                        <p>{props.volumeInfo.description}</p>
+                        <p>{props.description}</p>
                     </Col>
                 </Row>
             </section>

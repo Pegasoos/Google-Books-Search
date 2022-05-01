@@ -7,9 +7,9 @@ import Banner from './components/Banner';
 function App() {
   return (
     <div>
-      <Switchboard />
       <Navbar />
       <Banner />
+      <Switchboard />
     </div>
   );
 }

@@ -25,7 +25,7 @@ function Book(props){
             <section>
                 <Row>
                     <Col span = {4}>
-                        <img src = {props.imgSrc}></img>
+                        <img src = {props.imgSrc} alt="Book Cover"></img>
                     </Col>
                     <Col span = {20}>
                         <p>{props.description}</p>

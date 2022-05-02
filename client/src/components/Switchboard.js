@@ -7,7 +7,7 @@ function Switchboard() {
     return(
     <main>
         <Routes>
-             <Route exact path = '/' element = { <Searchbar />} />
+             <Route exact path = '/' element = {<Searchbar />} />
              <Route path = '/saved' element = {<Saved />} />
         </Routes>
     </main>

@@ -8,11 +8,14 @@ function List(props){
     return(
     <article className = 'list-container'>
         <h1>Header</h1>
-        {props.books.map(book => (
-            <Book title = {book.volumeInfo.title} 
+        {props.books.map( (book) => (
+            <Book 
+                  key = {book.etag}
+                  title = {book.volumeInfo.title} 
                   authors = {book.volumeInfo.authors} 
                   imgSrc = {book.volumeInfo.imageLinks.thumbnail}
                   description = {book.volumeInfo.description}
+                  link = {book.volumeInfo.infoLink}
             />
         ))}
     </article>

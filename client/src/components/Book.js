@@ -20,6 +20,15 @@ function Book(props){
         }
     }
 
+    const saveOrSearch = props.header;
+    let saveOrDeleteButton;
+
+    if(saveOrSearch === "Results"){
+        saveOrDeleteButton = <Button props = {props} onClick={saveBook}>Save</Button>
+    } else {
+        saveOrDeleteButton = <Button>Delete</Button>
+    }
+
     return(
         <article className='book-div'>
             <header>
@@ -34,7 +43,7 @@ function Book(props){
                 </Col>
                 <Col className = 'button-div' span = {4} offset = {14}>
                     <Button href = {props.link}>View</Button>
-                    <Button props = {props} onClick={saveBook}>Save</Button>
+                    {saveOrDeleteButton}
                 </Col>
             </Row>
             </header>

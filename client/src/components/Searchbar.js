@@ -9,7 +9,8 @@ const { Search } = Input;
 class Searchbar extends Component{
 
     state = {
-        books:[]
+        books:[],
+        header: "Results"
     }
 
     bookSearch = async (query) =>{
@@ -30,9 +31,10 @@ render(){
             <Search className = "search-bar" placeholder = "Search For A Book!" onSearch={this.bookSearch}/>
             {
                 this.state.books.length > 0 &&
-                <h1>Results</h1>
+                <h1>{this.state.header}</h1>
             }
             <List
+            header = {this.state.header}
             books = {this.state.books}
             /> 
         </div>

@@ -3,6 +3,23 @@ import { Row, Col, Button, Divider } from 'antd';
 
 
 function Book(props){
+
+    const saveBook = async () =>{
+        try {
+            const response = await fetch('/api/books',{
+                method:'POST',
+                body: JSON.stringify(props),
+                headers: {'Content-Type':'application/json'}
+                });
+                if(response.ok){
+                    console.log("Book Shelved!")
+                }
+                console.log(JSON.stringify(props))
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return(
         <article className='book-div'>
             <header>
@@ -17,7 +34,7 @@ function Book(props){
                 </Col>
                 <Col className = 'button-div' span = {4} offset = {14}>
                     <Button href = {props.link}>View</Button>
-                    <Button>Save</Button>
+                    <Button props = {props} onClick={saveBook}>Save</Button>
                 </Col>
             </Row>
             </header>

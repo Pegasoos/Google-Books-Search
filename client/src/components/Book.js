@@ -16,7 +16,7 @@ function Book(props){
                 </h3>
                 </Col>
                 <Col className = 'button-div' span = {4} offset = {14}>
-                    <Button>View</Button>
+                    <Button href = {props.link}>View</Button>
                     <Button>Save</Button>
                 </Col>
             </Row>

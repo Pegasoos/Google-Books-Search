@@ -4,7 +4,7 @@ import { Row, Col, Button, Divider } from 'antd';
 
 function Book(props){
     return(
-        <article class = 'book-div'>
+        <article className='book-div'>
             <header>
             <Row>
                 <Col className = 'book-heading-div' span = {6}>

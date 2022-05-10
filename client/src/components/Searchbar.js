@@ -8,7 +8,7 @@ const { Search } = Input;
 class Searchbar extends Component{
 
     state = {
-        displayResult:false
+        books:[]
     }
 
     bookSearch = async (query) =>{
@@ -16,31 +16,21 @@ class Searchbar extends Component{
         const firstCall = await API.search(query)
         const sortedCall = await firstCall.json();
         console.log(sortedCall)
+        this.setState({books:sortedCall.items})
+        console.log(this.state)
     }
         catch(err){
             console.log(err)
         }
-        //.then((response) => this.displayResults(response));
-   }
-    displayResults = (response) => response.map((book) => {
-        this.setState({displayResult: true,
-    title: book.results.volumeInfo.title,
-    authors: book.results.volumeInfo.authors[0],
-    imgSrc: book.results.volumeInfo.imageLinks.medium,
-    description: book.results.volumeInfo.description
-    })
-})
-
+   };
 render(){
     return(
         <div className='search-div'>
             <Search className = "search-bar" placeholder = "Search For A Book!" onSearch={this.bookSearch}/>
-            <List displayResult = {this.state.displayResult}
-            title = {this.state.title}
-            authors = {this.state.authors}
-            imgSrc = {this.state.imgSrc}
-            descripton = {this.state.description}
+            <List
+            books = {this.state.books}
             />
+            
         </div>
     )
 }

@@ -5,22 +5,18 @@ import './List.css';
 //HEADER PROP PASSED AS "SAVED" FOR SAVED BOOKS RENDERING OR "RESULTS" FOR SEARCH RENDERING
 function List(props){
 
-    const displayResult = props.displayResult;
-
-    if(displayResult){
     return(
     <article className = 'list-container'>
-        <h1>{props.header}</h1>
-        {props.map(results => (
-            <Book title = {props.title} 
-                  authors = {props.authors} 
-                  imgSrc = {props.imgSrc}
-                  description = {props.description}
+        <h1>Header</h1>
+        {props.books.map(book => (
+            <Book title = {book.volumeInfo.title} 
+                  authors = {book.volumeInfo.authors} 
+                  imgSrc = {book.volumeInfo.imageLinks.thumbnail}
+                  description = {book.volumeInfo.description}
             />
         ))}
     </article>
         )
-    }
 }
 
 export default List

@@ -3,6 +3,7 @@ import './Searchbar.css';
 import List from './List';
 import { Input } from 'antd';
 import API from '../utils/API';
+
 const { Search } = Input;
 
 class Searchbar extends Component{
@@ -27,10 +28,13 @@ render(){
     return(
         <div className='search-div'>
             <Search className = "search-bar" placeholder = "Search For A Book!" onSearch={this.bookSearch}/>
+            {
+                this.state.books.length > 0 &&
+                <h1>Results</h1>
+            }
             <List
             books = {this.state.books}
-            />
-            
+            /> 
         </div>
     )
 }

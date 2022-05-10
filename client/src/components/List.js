@@ -7,7 +7,6 @@ function List(props){
 
     return(
     <article className = 'list-container'>
-        <h1>Header</h1>
         {props.books.map( (book) => (
             <Book 
                   key = {book.etag}

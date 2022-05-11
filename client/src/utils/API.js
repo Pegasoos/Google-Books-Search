@@ -6,4 +6,5 @@ export default {
         headers:{"Content-type":"application/json;charset=UTF-8"}
     })
     }
+    
 }

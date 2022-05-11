@@ -17,6 +17,8 @@ function Saved(props){
                 headers:{"Content-type":"application/json;charset=UTF-8"}
             });
         const sortedBooks = await savedBooks.json()
+        setDatabaseState({books:sortedBooks})
+        //put sortedBooks into state with hook
      }
      //add List after database call is sorted out
     return(

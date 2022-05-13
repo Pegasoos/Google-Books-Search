@@ -9,7 +9,6 @@ function List(props){
     <article className = 'list-container'>
         {props.books.map( (book) => (
             <Book 
-                  header = {props.header}
                   key = {book.etag}
                   title = {book.volumeInfo.title} 
                   authors = {book.volumeInfo.authors} 

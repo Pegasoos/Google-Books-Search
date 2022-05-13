@@ -13,7 +13,7 @@ class Searchbar extends Component{
         header: "Results"
     }
 
-    bookSearch = async (query) =>{
+    bookSearch = async (query) => {
         try{
         const firstCall = await API.search(query)
         const sortedCall = await firstCall.json();
@@ -31,7 +31,7 @@ render(){
             <Search className = "search-bar" placeholder = "Search For A Book!" onSearch={this.bookSearch}/>
             {
                 this.state.books.length > 0 &&
-                <h1>{this.state.header}</h1>
+                <h1>Results</h1>
             }
             <List
             header = {this.state.header}

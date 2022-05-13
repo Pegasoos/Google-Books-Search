@@ -1,6 +1,6 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Saved.css'
-import List from './List'
+import Book from './Book'
 
 function Saved(props){
      const [databaseState, setDatabaseState] = useState({
@@ -23,8 +23,18 @@ function Saved(props){
      //add List after database call is sorted out
     return(
     <div className = "saved-div">
-        <h1>{props.header}</h1>
-        
+        <h1>Saved</h1>
+        {
+        databaseState.books.map((book) => (
+            <Book 
+                  key = {book._id}
+                  title = {book.title} 
+                  authors = {book.authors} 
+                  imgSrc = {book.imgSrc}
+                  description = {book.description}
+                  link = {book.link}
+            />
+        ))}
     </div>
     )
 }

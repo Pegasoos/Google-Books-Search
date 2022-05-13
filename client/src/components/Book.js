@@ -20,13 +20,21 @@ function Book(props){
         }
     }
 
+    const deleteBook = async () =>{
+        try {
+            const deletedBook = await fetch()
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     const saveOrSearch = props.header;
     let saveOrDeleteButton;
 
     if(saveOrSearch === "Results"){
         saveOrDeleteButton = <Button props = {props} onClick={saveBook}>Save</Button>
     } else {
-        saveOrDeleteButton = <Button>Delete</Button>
+        saveOrDeleteButton = <Button >Delete</Button>
     }
 
     return(

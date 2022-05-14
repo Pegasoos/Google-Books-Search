@@ -22,7 +22,14 @@ function Book(props){
 
     const deleteBook = async () =>{
         try {
-            const deletedBook = await fetch()
+            const response = await fetch('/api/books/:id', {
+                method:"DELETE",
+                body: JSON.stringify(props.key),
+                headers: {'Content-Type':'application/json'}
+            });
+            if(response.ok){
+                console.log("Book Removed")
+            }
         } catch (error) {
             console.log(error)
         }

@@ -37,7 +37,7 @@ mongoose.connect(
     console.log(`User Connected ${socket.id}`);
 
     socket.on("save_book", (title) =>{
-      console.log(title.message)
-      socket.broadcast.emit("book_alert", title.message)
+      console.log(title.message)//this runs
+      socket.broadcast.emit("book_alert", title)
     });
   })

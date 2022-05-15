@@ -1,13 +1,9 @@
-import {React, useEffect} from 'react';
+import {React} from 'react';
 import { Row, Col, Button, Divider } from 'antd';
 import io from 'socket.io-client';
 const socket = io.connect('http://localhost:8000');
 
 function Book(props){
-
-        socket.on("book_alert", (message) =>{
-            alert(message)
-        })
 
    const sendMessage = (title) =>{
     socket.emit("save_book", {message: `${title} has been saved to the shelf!`})

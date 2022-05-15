@@ -4,8 +4,8 @@ const PORT = process.env.PORT || 8000;
 const cors = require('cors')
 
 const app = express();
-app.use(cors())
-
+app.use(cors());
+//Setup HTTP Server and Socket.io
 const server = require('http').createServer(app);
 const io = require("socket.io")(server, { cors: { origin: "*" } }); 
 
@@ -32,3 +32,12 @@ mongoose.connect(
   server.listen(PORT, async () => {
     console.log(`Listening at http//:localhost:${PORT}!`)
   });
+
+  io.on("connection", (socket) =>{
+    console.log(`User Connected ${socket.id}`);
+
+    socket.on("save_book", (title) =>{
+      console.log(title)
+      socket.broadcast.emit("book_alert", {message:`${title} has been saved to the shelf!`})
+    });
+  })

@@ -1,8 +1,13 @@
 import React from 'react';
 import { Row, Col, Button, Divider } from 'antd';
-
+import io from 'socket.io-client';
+const socket = io.connect('http://localhost:8000');
 
 function Book(props){
+
+   const sendMessage = (title) =>{
+    socket.emit("save_book", `${title} has been saved to the shelf!`)
+   }
 
     const saveBook = async () =>{
         try {
@@ -12,6 +17,8 @@ function Book(props){
                 headers: {'Content-Type':'application/json'}
                 });
                 if(response.ok){
+                    //add socket.io call here
+                    sendMessage(props.title)
                     console.log("Book Shelved!")
                 }
                 console.log(JSON.stringify(props))

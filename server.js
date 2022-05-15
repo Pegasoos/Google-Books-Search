@@ -1,7 +1,13 @@
 const express = require('express');
 const path = require('path');
 const PORT = process.env.PORT || 8000;
+const cors = require('cors')
+
 const app = express();
+app.use(cors())
+
+const server = require('http').createServer(app);
+const io = require("socket.io")(server, { cors: { origin: "*" } }); 
 
 const mongoose = require("mongoose");
 
@@ -23,7 +29,6 @@ mongoose.connect(
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
   });
 
-  app.listen(PORT, async () => {
-   await console.log(`Listening at http//:localhost:${PORT}!`)
-  })
-  mongoose.connection.on('connected', () => console.log('Connected!'));
+  server.listen(PORT, async () => {
+    console.log(`Listening at http//:localhost:${PORT}!`)
+  });

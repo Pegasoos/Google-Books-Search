@@ -6,11 +6,13 @@ import Banner from './components/Banner';
 import io from 'socket.io-client';
 import { message } from 'antd'
 
+// Socket.io listens for book_aler from server to display message
 const socket = io.connect('http://localhost:8000');
 
 socket.on("book_alert", (title) =>{
   message.success(title.message)
 })
+// End Socket.io
 
 function App() {
   return (

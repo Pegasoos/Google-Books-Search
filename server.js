@@ -32,7 +32,7 @@ mongoose.connect(
   server.listen(PORT, async () => {
     console.log(`Listening at http//:localhost:${PORT}!`)
   });
-
+//Socket.io Connection to Display Alerts
   io.on("connection", (socket) =>{
     console.log(`User Connected ${socket.id}`);
 

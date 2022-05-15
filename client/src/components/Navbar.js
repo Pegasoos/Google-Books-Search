@@ -8,7 +8,7 @@ function Navbar() {
         return(
     <Row className='navbar-row'>
             <h3 className = "logo">Google Books Search</h3> 
-            <Menu mode='horizontal'>
+            <Menu mode='horizontal' className = 'nav-menu'>
                 <Menu.Item key = "search"><Link to ='/'><SearchOutlined /> Search</Link></Menu.Item>
                 <Menu.Item key = "saved"><Link to ='/saved'><BookTwoTone className='book-icon' />Saved</Link></Menu.Item>
             </Menu>    

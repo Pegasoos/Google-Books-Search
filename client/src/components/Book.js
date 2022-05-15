@@ -8,6 +8,7 @@ function Book(props){
    const sendMessage = (title) =>{
     socket.emit("save_book", {message: `${title} has been saved to the shelf!`})
    }
+
     const saveBook = async () =>{
         try {
             const response = await fetch('/api/books',{
@@ -16,7 +17,7 @@ function Book(props){
                 headers: {'Content-Type':'application/json'}
                 });
                 if(response.ok){
-                    //add socket.io call here
+                    //socket.io emits to server once book is successfuly saved
                     sendMessage(props.title)
                     console.log("Book Shelved!")
                 }

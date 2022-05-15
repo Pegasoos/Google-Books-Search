@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Saved.css'
 import Book from './Book'
+import { ReadOutlined } from '@ant-design/icons'
 
 function Saved(props){
      const [databaseState, setDatabaseState] = useState({
@@ -26,17 +27,18 @@ function Saved(props){
     <div className = "saved-div">
         <h1>Saved</h1>
         {
-        databaseState.books.map((book) => (
-            <Book 
-                  id ={book._id}
-                  key = {book._id}
-                  title = {book.title} 
-                  authors = {book.authors} 
-                  imgSrc = {book.imgSrc}
-                  description = {book.description}
-                  link = {book.link}
-            />
-        ))}
+            databaseState.books.length < 1 ? <ReadOutlined/>:databaseState.books.map((book) => (
+                <Book 
+                      id ={book._id}
+                      key = {book._id}
+                      title = {book.title} 
+                      authors = {book.authors} 
+                      imgSrc = {book.imgSrc}
+                      description = {book.description}
+                      link = {book.link}
+                />
+            ))
+        }
     </div>
     )
 }

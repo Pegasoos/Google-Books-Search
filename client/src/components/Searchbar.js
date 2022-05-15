@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Searchbar.css';
 import List from './List';
-import { Input } from 'antd';
+import { Input, Row, Col } from 'antd';
 import API from '../utils/API';
 
 const { Search } = Input;
@@ -27,7 +27,8 @@ class Searchbar extends Component{
    };
 render(){
     return(
-        <div className='search-div'>
+        <Row className='search-div'>
+            <Col span = {16} offset={4}>
             <Search className = "search-bar" placeholder = "Search For A Book!" onSearch={this.bookSearch}/>
             {
                 this.state.books.length > 0 &&
@@ -37,7 +38,8 @@ render(){
             header = {this.state.header}
             books = {this.state.books}
             /> 
-        </div>
+            </Col>
+        </Row>
     )
 }
 }

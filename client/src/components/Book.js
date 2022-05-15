@@ -20,11 +20,10 @@ function Book(props){
         }
     }
 
-    const deleteBook = async () =>{
+    const deleteBook = async (e) =>{
         try {
-            const response = await fetch('/api/books/:id', {
+            const response = await fetch(`/api/books/${props.id}`, {
                 method:"DELETE",
-                body: JSON.stringify(props.key),
                 headers: {'Content-Type':'application/json'}
             });
             if(response.ok){
@@ -41,7 +40,7 @@ function Book(props){
     if(saveOrSearch === "Results"){
         saveOrDeleteButton = <Button props = {props} onClick={saveBook}>Save</Button>
     } else {
-        saveOrDeleteButton = <Button >Delete</Button>
+        saveOrDeleteButton = <Button props = {props.id} onClick={deleteBook}>Delete</Button>
     }
 
     return(

@@ -17,6 +17,7 @@ function Saved(props){
                 headers:{"Content-type":"application/json;charset=UTF-8"}
             });
         const sortedBooks = await savedBooks.json()
+        console.log(sortedBooks)
         setDatabaseState({books:sortedBooks})
         //put sortedBooks into state with hook
      }
@@ -27,6 +28,7 @@ function Saved(props){
         {
         databaseState.books.map((book) => (
             <Book 
+                  id ={book._id}
                   key = {book._id}
                   title = {book.title} 
                   authors = {book.authors} 

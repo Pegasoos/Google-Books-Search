@@ -16,10 +16,13 @@ class Searchbar extends Component{
     bookSearch = async (query) => {
         try{
         const firstCall = await API.search(query)
+
         const sortedCall = await firstCall.json();
         console.log(sortedCall)
+
         const cleanedData = this.cleanData(sortedCall.items)
         console.log(cleanedData)
+        
         this.setState({books:sortedCall.items})
         console.log(this.state)
     }

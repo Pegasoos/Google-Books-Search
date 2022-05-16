@@ -6,7 +6,7 @@ import { Row, Col} from 'antd';
 
 function Saved(props){
      const [databaseState, setDatabaseState] = useState({
-        books:[] 
+        books:[],
      })
 
      useEffect(() =>{
@@ -23,6 +23,7 @@ function Saved(props){
         setDatabaseState({books:sortedBooks})
         //put sortedBooks into state with hook
      }
+
      //add List after database call is sorted out
     return(
     <Row className = "saved-row">
@@ -40,6 +41,7 @@ function Saved(props){
                       link = {book.link}
                 />
             ))
+
         }
         </Col>
     </Row>

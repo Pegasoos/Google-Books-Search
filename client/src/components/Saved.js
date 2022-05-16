@@ -30,7 +30,7 @@ function Saved(props){
         <Col span = {16} offset = {4}>
         <h1>Saved</h1>
         {
-            databaseState.books.length < 1 ? <ReadOutlined/>:databaseState.books.map((book) => (
+            databaseState.books.length < 1 ? <h1>Your Shelf is Currently Empty!</h1>:databaseState.books.map((book) => (
                 <Book 
                       id ={book._id}
                       key = {book._id}

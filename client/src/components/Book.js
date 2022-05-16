@@ -35,7 +35,7 @@ function Book(props){
                 headers: {'Content-Type':'application/json'}
             });
             if(response.ok){
-                console.log("Book Removed")
+                window.location.reload();
             }
         } catch (error) {
             console.log(error)

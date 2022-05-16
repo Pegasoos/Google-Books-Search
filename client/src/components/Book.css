@@ -1,12 +1,28 @@
 h2{
     font-family: 'Roboto Slab', serif;
 }
-p{
+h3{
     font-family: 'Roboto', 'sansserif'
+}
+p{
+    position: relative;
+    font-family: 'Roboto', 'sansserif';
+    line-height: 1.6;
+    max-width: 80%;
+    white-space: normal;
+    float: right;
+}
+img{
+    position:relative;
+    white-space: normal;
+    float:left;
 }
 .top-book-div{
     margin-bottom: 1em;
 }
 .book-button{
     font-size: 8em;
+}
+.book-heading-div{
+    margin-bottom: 1em;
 }

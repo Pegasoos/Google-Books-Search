@@ -56,7 +56,7 @@ function Book(props){
             
         <Divider />
             <Row>
-                <Col className = 'book-heading-div' span = {6}>
+                <Col className = 'book-heading-div' span ={8} offset = {10}>
                 <h2>
                     {props.title}
                 </h2>
@@ -77,18 +77,20 @@ function Book(props){
                     })}
                 </h3>
                 </Col>
-                <Col className = 'button-div' span = {4} offset = {14}>
-                    <Button type="link" href = {props.link}>View</Button>
-                    {saveOrDeleteButton}
-                </Col>
             </Row>
                 <Row className = "top-book-div">
-                    <Col span = {4}>
+                    <Col span = {1}>
                         <img src = {props.imgSrc} alt="Book Cover"></img>
                     </Col>
                     <Col span = {20}>
                         <p>{props.description}</p>
                     </Col>
+                </Row>
+                <Row>
+                <Col className = 'button-div' span = {4} offset = {20}>
+                    <Button type="link" href = {props.link}>View</Button>
+                    {saveOrDeleteButton}
+                </Col>
                 </Row>
         </article>
     )

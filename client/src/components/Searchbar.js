@@ -27,10 +27,13 @@ class Searchbar extends Component{
             console.log(err)
         }
    };
-   cleanData = (sortedCall) =>{
+   cleanData = async (sortedCall) =>{
     sortedCall.map((book) =>{
         if(book.volumeInfo.hasOwnProperty('authors') === false){
             book.volumeInfo['authors'] = ['No Author Specified'];
+        }
+        if(book.volumeInfo.hasOwnProperty('imageLinks') === false){
+            book.volumeInfo['imageLinks'] = {thumbnail:'https://place-hold.it/128x96'}
         }
         return book
     });

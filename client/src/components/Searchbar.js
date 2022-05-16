@@ -18,6 +18,8 @@ class Searchbar extends Component{
         const firstCall = await API.search(query)
         const sortedCall = await firstCall.json();
         console.log(sortedCall)
+        const cleanedData = this.cleanData(sortedCall.items)
+        console.log(cleanedData)
         this.setState({books:sortedCall.items})
         console.log(this.state)
     }
@@ -25,6 +27,15 @@ class Searchbar extends Component{
             console.log(err)
         }
    };
+   cleanData = (sortedCall) =>{
+    sortedCall.map((book) =>{
+        if(book.volumeInfo.hasOwnProperty('authors') === false){
+            book.volumeInfo['authors'] = ['No Author Specified'];
+        }
+        return book
+    });
+   };
+
 render(){
     return(
         <Row className='search-div'>

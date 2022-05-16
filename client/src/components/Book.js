@@ -69,7 +69,20 @@ function Book(props){
                     {props.title}
                 </h2>
                 <h3>
-                    Written by {props.authors}
+                    Written by {props.authors.map((author, i, authors) =>{
+                     if(authors.length === 0){
+                        return `No Specified Author`
+                    }
+                    if( authors.length > 1 && i + 1 === authors.length){
+                        return `and ${author}`
+                    }
+                    if(authors.length === 1 || authors.length === 2){
+                        return ` ${author} `
+                    }
+                    else{
+                        return `${author}, `
+                    }
+                    })}
                 </h3>
                 </Col>
                 <Col className = 'button-div' span = {4} offset = {14}>

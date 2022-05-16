@@ -11,14 +11,14 @@
  6. [License](#license)
  7. [Questions](#questions)
 
- ![Screenshot](./public/images/screenshot.png)
+ ![Screenshot](./client/public/images/screenshot.png)
 
 ## Description
 ### Google Books React Search is an application that allows users to search the Google Books database and store books of interest for later viewing.
 ## Installation
 ### None neccesary.
 ## Usage
-### Simply navigate to the url here: 
+### Simply navigate to the url here: https://mysterious-cove-70427.herokuapp.com/
 ## Contributing
 ### 1. Fork the repository on Github. 2. Clone the project to your own machine. 3. Commit changes to your branch. 4. Push your work back up to your own fork. 5. Submit a pull request so we can review your changes.
 ## Tests

@@ -5,6 +5,9 @@
 }
 .navbar-row{
     font-size: larger;
+    position:sticky;
+    top:0;
+    z-index: 1;
 }
 .green-span{
     color:#0F9D58

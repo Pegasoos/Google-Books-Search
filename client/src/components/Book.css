@@ -1,6 +1,9 @@
 h2{
     font-family: 'Roboto Slab', serif;
 }
+p{
+    font-family: 'Roboto', 'sansserif'
+}
 .top-book-div{
     margin-bottom: 1em;
 }

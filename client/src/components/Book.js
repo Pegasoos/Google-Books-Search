@@ -55,14 +55,6 @@ function Book(props){
         <article className='book-div'>
             
         <Divider />
-                <Row className = "top-book-div">
-                    <Col span = {4}>
-                        <img src = {props.imgSrc} alt="Book Cover"></img>
-                    </Col>
-                    <Col span = {20}>
-                        <p>{props.description}</p>
-                    </Col>
-                </Row>
             <Row>
                 <Col className = 'book-heading-div' span = {6}>
                 <h2>
@@ -90,6 +82,14 @@ function Book(props){
                     {saveOrDeleteButton}
                 </Col>
             </Row>
+                <Row className = "top-book-div">
+                    <Col span = {4}>
+                        <img src = {props.imgSrc} alt="Book Cover"></img>
+                    </Col>
+                    <Col span = {20}>
+                        <p>{props.description}</p>
+                    </Col>
+                </Row>
         </article>
     )
 }

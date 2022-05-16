@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Saved.css'
 import Book from './Book'
 import { ReadOutlined } from '@ant-design/icons'
+import { Row, Col} from 'antd'; 
 
 function Saved(props){
      const [databaseState, setDatabaseState] = useState({
@@ -24,7 +25,8 @@ function Saved(props){
      }
      //add List after database call is sorted out
     return(
-    <div className = "saved-div">
+    <Row className = "saved-row">
+        <Col span = {16} offset = {4}>
         <h1>Saved</h1>
         {
             databaseState.books.length < 1 ? <ReadOutlined/>:databaseState.books.map((book) => (
@@ -39,7 +41,8 @@ function Saved(props){
                 />
             ))
         }
-    </div>
+        </Col>
+    </Row>
     )
 }
 

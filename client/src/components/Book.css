@@ -1,3 +1,6 @@
-.book-div{
-    border: solid black 2px
+.top-book-div{
+    margin-bottom: 1em;
+}
+.book-button{
+    font-size: 8em;
 }

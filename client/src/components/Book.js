@@ -1,6 +1,7 @@
 import {React} from 'react';
 import { Row, Col, Button, Divider } from 'antd';
 import io from 'socket.io-client';
+import './Book.css'
 const socket = io.connect('http://localhost:8000');
 
 function Book(props){
@@ -45,32 +46,16 @@ function Book(props){
     let saveOrDeleteButton;
 
     if(saveOrSearch === "Results"){
-        saveOrDeleteButton = <Button props = {props} onClick={saveBook}>Save</Button>
+        saveOrDeleteButton = <Button className = "book-button" props = {props} onClick={saveBook} type="primary">Save</Button>
     } else {
-        saveOrDeleteButton = <Button props = {props.id} onClick={deleteBook}>Delete</Button>
+        saveOrDeleteButton = <Button className = "book-button" props = {props.id} onClick={deleteBook} type="danger">Delete</Button>
     }
 
     return(
         <article className='book-div'>
-            <header>
-            <Row>
-                <Col className = 'book-heading-div' span = {6}>
-                <h1>
-                    {props.title}
-                </h1>
-                <h3>
-                    Written by {props.authors}
-                </h3>
-                </Col>
-                <Col className = 'button-div' span = {4} offset = {14}>
-                    <Button href = {props.link}>View</Button>
-                    {saveOrDeleteButton}
-                </Col>
-            </Row>
-            </header>
+            
         <Divider />
-            <section>
-                <Row>
+                <Row className = "top-book-div">
                     <Col span = {4}>
                         <img src = {props.imgSrc} alt="Book Cover"></img>
                     </Col>
@@ -78,8 +63,20 @@ function Book(props){
                         <p>{props.description}</p>
                     </Col>
                 </Row>
-            </section>
-
+            <Row>
+                <Col className = 'book-heading-div' span = {6}>
+                <h2>
+                    {props.title}
+                </h2>
+                <h3>
+                    Written by {props.authors}
+                </h3>
+                </Col>
+                <Col className = 'button-div' span = {4} offset = {14}>
+                    <Button type="link" href = {props.link}>View</Button>
+                    {saveOrDeleteButton}
+                </Col>
+            </Row>
         </article>
     )
 }

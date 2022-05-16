@@ -29,7 +29,7 @@ render(){
     return(
         <Row className='search-div'>
             <Col span = {16} offset={4}>
-            <Search className = "search-bar" placeholder = "Search For A Book!" onSearch={this.bookSearch}/>
+            <Search className = "search-bar" placeholder = "Search For A Book!" onSearch={this.bookSearch} enterButton/>
             {
                 this.state.books.length > 0 &&
                 <h1>Results</h1>

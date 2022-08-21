@@ -3,11 +3,11 @@ import './App.css';
 import Switchboard from './components/Switchboard';
 import Navbar from './components/Navbar';
 import Banner from './components/Banner';
-import io from 'socket.io-client';
+import { io }  from 'socket.io-client';
 import { message } from 'antd'
 
 // Socket.io listens for book_aler from server to display message
-const socket = io.connect(`https://${window.location.hostname}:8080`);
+const socket = io();
 
 socket.on("book_alert", (title) =>{
   message.success(title.message)

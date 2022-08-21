@@ -2,7 +2,7 @@ import {React} from 'react';
 import { Row, Col, Button, Divider } from 'antd';
 import io from 'socket.io-client';
 import './Book.css'
-const socket = io.connect('http://localhost:8000');
+const socket = io.connect('https://mysterious-cove-70427.herokuapp.com/#/', {reconnect: true});
 
 function Book(props){
 

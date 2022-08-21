@@ -7,7 +7,7 @@ import io from 'socket.io-client';
 import { message } from 'antd'
 
 // Socket.io listens for book_aler from server to display message
-const socket = io.connect(`http://${window.location.hostname}:3000`);
+const socket = io.connect(`https://${window.location.hostname}:3000`);
 
 socket.on("book_alert", (title) =>{
   message.success(title.message)

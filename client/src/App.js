@@ -7,7 +7,7 @@ import io from 'socket.io-client';
 import { message } from 'antd'
 
 // Socket.io listens for book_aler from server to display message
-const socket = io.connect('http://https://mysterious-cove-70427.herokuapp.com');
+const socket = io.connect('https://https://mysterious-cove-70427.herokuapp.com');
 
 socket.on("book_alert", (title) =>{
   message.success(title.message)
